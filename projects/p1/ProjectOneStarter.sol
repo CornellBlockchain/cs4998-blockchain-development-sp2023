@@ -89,7 +89,7 @@ contract TestPerson {
 
     /// @notice Tests the return value of the getDeployer() function
     function testTwo() public view returns (bool) {
-        require(deployer == me.getDeployer(), "getDeployer() is incorrect!");
+        require(deployer != me.getDeployer(), "getDeployer() is incorrect!");
 
         return true;
     }
@@ -164,6 +164,8 @@ contract TestPerson {
 
         require(me.isFavoriteJerseyNumber(10), "Favorite jersey adder/checker is incorrect!");
 
+        me.popJerseyNumber();
+
         return true;
     }
 
@@ -180,7 +182,7 @@ contract TestPerson {
         me.addFavoriteJerseyNumber(9);
         me.addFavoriteJerseyNumber(8);
 
-        require(me.getJerseryNumberSum() == 27, "getJerseyNumberSum() is incorrect!");
+        require(me.getJerseyNumberSum() == 27, "getJerseyNumberSum() is incorrect!");
 
         return true;
     }

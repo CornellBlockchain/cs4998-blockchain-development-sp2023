@@ -171,7 +171,7 @@ contract TestPerson {
 
     /// @notice Tests the isFavoriteJerseyNumber() function
     function testEleven() public view returns (bool) {
-        require(me.isFavoriteJerseyNumber(7), "Favorite jersey adder/checker is incorrect!");
+        require(!me.isFavoriteJerseyNumber(7), "Favorite jersey adder/checker is incorrect!");
 
         return true;
     }
